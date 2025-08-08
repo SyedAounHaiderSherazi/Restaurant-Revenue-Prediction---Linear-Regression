@@ -1,72 +1,66 @@
 # 🍽️ Restaurant Revenue Prediction - Linear Regression
 
-This project is part of Course 1: Supervised Machine Learning in the [Machine Learning Specialization by Andrew Ng (DeepLearning.AI)](https://www.coursera.org/specializations/machine-learning-introduction). The goal is to predict restaurant revenue based on population size using **Linear Regression**.
+This project is part of Course 1 of the Machine Learning Specialization by Andrew Ng (DeepLearning.AI). The goal is to predict restaurant revenue based on population size using **Linear Regression**.
 
 ---
 
 ## 📌 Problem Statement
 
-Given historical data of profits from restaurants in various cities and the populations of those cities, we aim to learn a linear relationship between **city population** (input feature) and **profit** (target value).
+Given data on city populations and corresponding restaurant profits, the objective is to learn a linear function that predicts profit from population.
 
 ---
 
-## 📈 Core Concepts & Techniques
+## 📈 Concepts & Formulas
 
-### 🔁 Linear Regression Hypothesis Function:
+### Linear Hypothesis Function:
 
-\[
-h_\theta(x) = \theta_0 + \theta_1x
-\]
+    h(x) = θ0 + θ1 * x
 
 Where:
-- \( x \) = population of a city  
-- \( h_\theta(x) \) = predicted profit  
-- \( \theta_0, \theta_1 \) = parameters learned via gradient descent
+- x = population of the city
+- h(x) = predicted profit
+- θ0, θ1 = model parameters
 
 ---
 
-### 💰 Cost Function (Mean Squared Error):
+### Cost Function (Mean Squared Error):
 
-\[
-J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2
-\]
+    J(θ) = (1 / (2 * m)) * Σ (h(xᶦ) - yᶦ)²
 
 Where:
-- \( m \) = number of training examples  
-- \( y^{(i)} \) = actual profit  
+- m = number of training examples
+- yᶦ = actual profit
 
 ---
 
-### 🧠 Gradient Descent:
+### Gradient Descent Update Rule:
 
-\[
-\theta_j := \theta_j - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) x_j^{(i)}
-\]
+    θj := θj - α * (1 / m) * Σ ((h(xᶦ) - yᶦ) * xⱼᶦ)
 
-- \( \alpha \): learning rate  
-- Iteratively updates parameters to minimize the cost function
+- α = learning rate
+- j = 0 or 1 depending on the parameter being updated
 
 ---
 
-## 🔧 Implementation Details
+## 🔧 Implementation
 
 - Language: Python
 - Libraries: NumPy, Matplotlib
-- Gradient Descent implemented from scratch
-- Loss function visualized to demonstrate convergence
+- Implemented cost function and gradient descent from scratch
+- Visualized the learning process using loss plots
 
 ---
 
-## 📊 Output
+## 📊 Outputs
 
-- Predicted revenue vs. actual data plotted
-- Cost function decreases over time (learning rate tuned for best convergence)
-- Final model generalizes well for similar input data
+- Line of best fit on training data
+- Cost function convergence graph
+- Trained model for predictions on new city data
 
 ---
 
-## 📚 Skills Gained
+## 🧠 Skills Learned
 
-- Understanding the math behind Linear Regression
-- Implementing cost function and gradient descent
-- Data visualization and loss plotting
+- Linear regression theory and math
+- Optimization with gradient descent
+- Loss visualization and learning rate tuning
